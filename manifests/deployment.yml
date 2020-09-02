@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kubes-6213"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kubes-6213"
+  template:
+    metadata:
+      labels:
+        app: "kubes-6213"
+    spec:
+      containers:
+        - name: "kubes-6213"
+          image: "reg104.azurecr.io/kubes"
+          ports:
+          - containerPort: 80
